@@ -1,112 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Check if a MacBook is brand new, open box, Apple refurbished, third-party refurbished or second hand before you buy.">
-<meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<title>Lidcheck: verify any MacBook before you buy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/lucide@0.383.0/dist/umd/lucide.min.js"></script>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description"
+    content="Check if a MacBook is brand new, open box, Apple refurbished, third-party refurbished or second hand before you buy.">
+  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>Lidcheck: verify any MacBook before you buy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<aside class="sidebar" aria-label="Sidebar">
-  <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
-  <div class="app-name">Lidcheck</div>
-  <div class="app-sub">Verify any MacBook before you buy</div>
-  <ul class="navlist">
-    <li><a href="#detect" data-view="detect"><span class="tile blue"><i data-lucide="scan-search"></i></span>Condition<span class="count" id="navCond"></span></a></li>
-    <li><a href="#inspect" data-view="inspect"><span class="tile green"><i data-lucide="list-checks"></i></span>Checklist<span class="count" id="navCheck"></span></a></li>
-    <li><a href="#tools" data-view="tools"><span class="tile gray"><i data-lucide="wrench"></i></span>Test tools</a></li>
-  </ul>
-  <div class="side-label">Quick links</div>
-  <ul class="navlist">
-    <li><a href="https://checkcoverage.apple.com" target="_blank" rel="noopener"><span class="tile orange"><i data-lucide="shield-check"></i></span>Check coverage</a></li>
-    <li><a href="https://support.apple.com/specs" target="_blank" rel="noopener"><span class="tile indigo"><i data-lucide="file-text"></i></span>Tech specs</a></li>
-    <li><a href="https://www.apple.com/shop/refurbished/mac" target="_blank" rel="noopener"><span class="tile teal"><i data-lucide="refresh-cw"></i></span>Apple refurbished</a></li>
-  </ul>
-  <div class="side-foot">Your answers and checks are saved in this browser.</div>
-</aside>
+  <aside class="sidebar" aria-label="Sidebar">
+    <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="app-name">Lidcheck</div>
+    <div class="app-sub">Verify any MacBook before you buy</div>
+    <ul class="navlist">
+      <li><a href="#detect" data-view="detect"><span class="tile blue"><i
+              data-lucide="scan-search"></i></span>Condition<span class="count" id="navCond"></span></a></li>
+      <li><a href="#inspect" data-view="inspect"><span class="tile green"><i
+              data-lucide="list-checks"></i></span>Checklist<span class="count" id="navCheck"></span></a></li>
+      <li><a href="#tools" data-view="tools"><span class="tile gray"><i data-lucide="wrench"></i></span>Test tools</a>
+      </li>
+    </ul>
+    <div class="side-label">Quick links</div>
+    <ul class="navlist">
+      <li><a href="https://checkcoverage.apple.com" target="_blank" rel="noopener"><span class="tile orange"><i
+              data-lucide="shield-check"></i></span>Check coverage</a></li>
+      <li><a href="https://support.apple.com/specs" target="_blank" rel="noopener"><span class="tile indigo"><i
+              data-lucide="file-text"></i></span>Tech specs</a></li>
+      <li><a href="https://www.apple.com/shop/refurbished/mac" target="_blank" rel="noopener"><span class="tile teal"><i
+              data-lucide="refresh-cw"></i></span>Apple refurbished</a></li>
+    </ul>
+    <div class="side-foot">Your answers and checks are saved in this browser.</div>
+  </aside>
 
-<main>
-<!-- CONDITION -->
-<section class="view" id="view-detect">
-  <div class="page">
-    <div class="head">
-      <h1>Condition</h1>
-      <p>Is it really new, or just sold as new? Fill in what you can see and Lidcheck tells you whether it is brand new, open box, Apple refurbished, third-party refurbished or second hand.</p>
-    </div>
-    <div class="detect">
-      <div id="qs"></div>
-      <aside class="result" id="result" aria-live="polite"></aside>
-    </div>
-    <p class="foot">The verdict is an estimate from the evidence you enter, not proof. An Apple Store or Apple Authorized Service Provider can confirm history from the serial. Lidcheck is independent and not affiliated with Apple.</p>
+  <main>
+    <!-- CONDITION -->
+    <section class="view" id="view-detect">
+      <div class="page">
+        <div class="head">
+          <h1>Condition</h1>
+          <p>Is it really new, or just sold as new? Fill in what you can see and Lidcheck tells you whether it is brand
+            new, open box, Apple refurbished, third-party refurbished or second hand.</p>
+        </div>
+        <div class="detect">
+          <div id="qs"></div>
+          <aside class="result" id="result" aria-live="polite"></aside>
+        </div>
+        <p class="foot">The verdict is an estimate from the evidence you enter, not proof. An Apple Store or Apple
+          Authorized Service Provider can confirm history from the serial. Lidcheck is independent and not affiliated
+          with Apple.</p>
+      </div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section class="view" id="view-inspect">
+      <div class="page">
+        <div class="head">
+          <h1>Checklist</h1>
+          <p>Choose how you are buying. The checks change to fit, from sealed box signs for new to lock and wear checks
+            for second hand.</p>
+        </div>
+        <div class="seg types" id="types" role="radiogroup" aria-label="Purchase type"></div>
+        <div class="summary" id="summary"></div>
+        <div id="stages"></div>
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section class="view" id="view-tools">
+      <div class="page">
+        <div class="head">
+          <h1>Test tools</h1>
+          <p>Open this page on the MacBook you are checking. Each tool tests something a seller can’t fake in a photo.
+          </p>
+        </div>
+        <div class="tools">
+          <div class="tool">
+            <div class="tool-h"><span class="tile blue"><i data-lucide="barcode"></i></span>
+              <div>
+                <h3>Part number decoder</h3>
+                <p>From System Information or the box label, like MRX33LL/A.</p>
+              </div>
+            </div>
+            <div class="field2"><input id="pn" placeholder="MRX33LL/A" autocomplete="off" spellcheck="false"
+                aria-label="Part number"><button class="btn" id="pnBtn" type="button">Decode</button></div>
+            <div id="pnOut" style="margin-top:10px"></div>
+            <details class="regions">
+              <summary>Common region codes</summary>
+              <div class="rt">
+                <table id="rtable"></table>
+              </div>
+            </details>
+          </div>
+          <div class="tool">
+            <div class="tool-h"><span class="tile indigo"><i data-lucide="keyboard"></i></span>
+              <div>
+                <h3>Keyboard</h3>
+                <p>Click the keyboard, then press every key.</p>
+              </div>
+            </div>
+            <div class="kb" id="kb" tabindex="0" aria-label="Keyboard tester, click then press keys"></div>
+            <div class="kbs"><span id="kbCount"></span><button class="btn plain" id="kbReset"
+                type="button">Clear</button></div>
+            <p class="note">Hold fn to test F1 to F12. Press Command on its own, since shortcuts can trigger the
+              browser.</p>
+          </div>
+          <div class="tool">
+            <div class="tool-h"><span class="tile orange"><i data-lucide="monitor"></i></span>
+              <div>
+                <h3>Display</h3>
+                <p>Full screen colors for dead pixels and backlight bleed.</p>
+              </div>
+            </div>
+            <button class="btn" id="pxBtn" type="button"><i data-lucide="maximize-2"></i>Start color test</button>
+            <div class="sw" aria-hidden="true"><i style="background:#000"></i><i style="background:#fff"></i><i
+                style="background:#f00"></i><i style="background:#0f0"></i><i style="background:#00f"></i><i
+                style="background:#808080"></i></div>
+            <p class="note">Click or press Space for the next color, Esc to exit. Black shows stuck bright pixels, white
+              shows dead ones.</p>
+          </div>
+          <div class="tool">
+            <div class="tool-h"><span class="tile pink" style="background:var(--pink)"><i
+                  data-lucide="volume-2"></i></span>
+              <div>
+                <h3>Speakers</h3>
+                <p>Turn the volume up and listen for buzz or rattle.</p>
+              </div>
+            </div>
+            <div class="brow"><button class="btn plain" data-pan="-1" type="button">Left</button><button
+                class="btn plain" data-pan="1" type="button">Right</button><button class="btn" id="sweep"
+                type="button">Bass to treble sweep</button></div>
+            <p class="note">The sweep is the best rattle test. Listen closely at the low end.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="credit">
+      © 2026 Lidcheck. Developed by <a href="https://mahedi.pages.dev" target="_blank" rel="noopener">Mahedi Hasan</a>
+    </footer>
+  </main>
+
+  <nav class="tabbar" aria-label="Sections">
+    <a href="#detect" data-view="detect"><i data-lucide="scan-search"></i>Condition</a>
+    <a href="#inspect" data-view="inspect"><i data-lucide="list-checks"></i>Checklist</a>
+    <a href="#tools" data-view="tools"><i data-lucide="wrench"></i>Tools</a>
+  </nav>
+  <div class="minibar" id="mini">
+    <div class="txt"><small>Best match</small><b id="miniWord">Waiting for answers</b></div><button class="btn"
+      type="button" id="miniGo">Details</button>
   </div>
-</section>
 
-<!-- CHECKLIST -->
-<section class="view" id="view-inspect">
-  <div class="page">
-    <div class="head">
-      <h1>Checklist</h1>
-      <p>Choose how you are buying. The checks change to fit, from sealed box signs for new to lock and wear checks for second hand.</p>
-    </div>
-    <div class="seg types" id="types" role="radiogroup" aria-label="Purchase type"></div>
-    <div class="summary" id="summary"></div>
-    <div id="stages"></div>
-  </div>
-</section>
-
-<!-- TOOLS -->
-<section class="view" id="view-tools">
-  <div class="page">
-    <div class="head">
-      <h1>Test tools</h1>
-      <p>Open this page on the MacBook you are checking. Each tool tests something a seller can’t fake in a photo.</p>
-    </div>
-    <div class="tools">
-      <div class="tool">
-        <div class="tool-h"><span class="tile blue"><i data-lucide="barcode"></i></span><div><h3>Part number decoder</h3><p>From System Information or the box label, like MRX33LL/A.</p></div></div>
-        <div class="field2"><input id="pn" placeholder="MRX33LL/A" autocomplete="off" spellcheck="false" aria-label="Part number"><button class="btn" id="pnBtn" type="button">Decode</button></div>
-        <div id="pnOut" style="margin-top:10px"></div>
-        <details class="regions"><summary>Common region codes</summary><div class="rt"><table id="rtable"></table></div></details>
-      </div>
-      <div class="tool">
-        <div class="tool-h"><span class="tile indigo"><i data-lucide="keyboard"></i></span><div><h3>Keyboard</h3><p>Click the keyboard, then press every key.</p></div></div>
-        <div class="kb" id="kb" tabindex="0" aria-label="Keyboard tester, click then press keys"></div>
-        <div class="kbs"><span id="kbCount"></span><button class="btn plain" id="kbReset" type="button">Clear</button></div>
-        <p class="note">Hold fn to test F1 to F12. Press Command on its own, since shortcuts can trigger the browser.</p>
-      </div>
-      <div class="tool">
-        <div class="tool-h"><span class="tile orange"><i data-lucide="monitor"></i></span><div><h3>Display</h3><p>Full screen colors for dead pixels and backlight bleed.</p></div></div>
-        <button class="btn" id="pxBtn" type="button"><i data-lucide="maximize-2"></i>Start color test</button>
-        <div class="sw" aria-hidden="true"><i style="background:#000"></i><i style="background:#fff"></i><i style="background:#f00"></i><i style="background:#0f0"></i><i style="background:#00f"></i><i style="background:#808080"></i></div>
-        <p class="note">Click or press Space for the next color, Esc to exit. Black shows stuck bright pixels, white shows dead ones.</p>
-      </div>
-      <div class="tool">
-        <div class="tool-h"><span class="tile pink" style="background:var(--pink)"><i data-lucide="volume-2"></i></span><div><h3>Speakers</h3><p>Turn the volume up and listen for buzz or rattle.</p></div></div>
-        <div class="brow"><button class="btn plain" data-pan="-1" type="button">Left</button><button class="btn plain" data-pan="1" type="button">Right</button><button class="btn" id="sweep" type="button">Bass to treble sweep</button></div>
-        <p class="note">The sweep is the best rattle test. Listen closely at the low end.</p>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-
-<nav class="tabbar" aria-label="Sections">
-  <a href="#detect" data-view="detect"><i data-lucide="scan-search"></i>Condition</a>
-  <a href="#inspect" data-view="inspect"><i data-lucide="list-checks"></i>Checklist</a>
-  <a href="#tools" data-view="tools"><i data-lucide="wrench"></i>Tools</a>
-</nav>
-<div class="minibar" id="mini"><div class="txt"><small>Best match</small><b id="miniWord">Waiting for answers</b></div><button class="btn" type="button" id="miniGo">Details</button></div>
-
-<script src="data.js"></script>
-<script src="app.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
