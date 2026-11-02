@@ -1,4 +1,4 @@
-# Lidcheck
+# MacCheck
 
 Check whether a MacBook is brand new, open box, Apple refurbished, third-party refurbished or second hand before you buy. Static site: plain HTML, CSS and JavaScript, no build step.
 
